@@ -1,0 +1,29 @@
+---
+interface Props {
+  tecnologia?: string;
+}
+
+const { tecnologia } = Astro.props;
+const tarjetas = [
+  {
+    name: "react",
+    src: "",
+  },
+  { name: "react", src: "" },
+];
+---
+
+<article class="h-1/4">
+  <div class="block bg-transparent">
+    {
+      tarjetas.map((tarjeta) => (
+        <>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <img src={tarjeta.src} alt="" />
+            <h2 class="text-yellow-100 text-2xl font-bold">{tarjeta.name}</h2>
+          </div>
+        </>
+      ))
+    }
+  </div>
+</article>

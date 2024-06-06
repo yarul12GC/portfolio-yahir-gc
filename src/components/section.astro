@@ -1,0 +1,36 @@
+---
+interface Props {
+  info: string;
+}
+const { info } = Astro.props;
+---
+
+<section
+  class="w-full h-[600px] text-white lg:flex block shadow-lg shadow-black"
+>
+  <!-- section 1 info -->
+  <div class="lg:w-2/4 flex items-center justify-center">
+    <div class="w-3/4">
+      <h1 class="text-6xl p-1">
+        I'm <strong class="text-yellow-400"> Pepe</strong>
+      </h1>
+      <h3 class="text-2xl p-2">{info}</h3>
+      <div class="mt-3">
+        <button
+          class="mborder-solid border-yellow-400 border-4 rounded-md font-bold text-xl text-yellow-400 p-2 hover:text-white hover:bg-yellow-400 hover:delay-100 hover:duration-200"
+          >Contact Me
+        </button>
+      </div>
+    </div>
+    <!-- section 2 image -->
+  </div>
+  <div class="lg:w-2/4 flex items-end justify-end">
+    <div class="">
+      <img
+        class="p-5"
+        src="https://media3.giphy.com/media/wTpkLqAZf3NFcgzQ4J/giphy.gif"
+        alt=""
+      />
+    </div>
+  </div>
+</section>

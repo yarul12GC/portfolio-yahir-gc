@@ -1,0 +1,46 @@
+---
+interface Props {
+  title?: string;
+  logo: string;
+}
+const { title, logo } = Astro.props;
+
+const list = [
+  { name: "About me", link: "#" },
+  { name: "Portfolio", link: "#" },
+  { name: "Contact me", link: "#" },
+];
+---
+
+<nav class="bg-transparent flex justify-between text-white text-xl p-6">
+  <div>{logo}</div>
+  <div class="md:space-x-11">
+    {
+      list.map((list) => (
+        <a
+          href={list.link}
+          class="hover:text-yellow-400 hover:delay-150 hover:duration-100  cursor-pointer"
+        >
+          {list.name}{" "}
+        </a>
+      ))
+    }
+  </div>
+  <div class="md:space-x-5">
+    <a href="">
+      <i
+        class="fab fa-github hover:text-yellow-400 hover:delay-150 hover:duration-100"
+      ></i>
+    </a>
+    <a href="">
+      <i
+        class="fab fa-linkedin hover:text-yellow-400 hover:delay-150 hover:duration-100"
+      ></i>
+    </a>
+    <a href="">
+      <i
+        class="fab fa-whatsapp hover:text-yellow-400 hover:delay-150 hover:duration-100"
+      ></i>
+    </a>
+  </div>
+</nav>
