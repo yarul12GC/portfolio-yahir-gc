@@ -4,15 +4,85 @@ import Header from "../components/header.astro";
 import Section from "../components/section.astro";
 import Info from "../components/info.astro";
 import Tecnologys from "../components/tecnologys.astro";
+import Proyectos from "../components/proyectos.astro";
+
+const tarjetas = [
+  {
+    name: "PHP",
+    src: "php.svg",
+  },
+  {
+    name: "SQL",
+    src: "servidor-sql.png",
+  },
+  {
+    name: "CSS",
+    src: "css.png",
+  },
+  {
+    name: "Javascript",
+    src: "JS.png",
+  },
+  {
+    name: "HTML",
+    src: "html.png",
+  },
+  {
+    name: "BOOTSTRAP",
+    src: "bootstrap-logo.svg",
+  },
+];
+
+const proyectosp = [
+  {
+    proyecto: "CERTICENCA",
+    description:
+      "Sistema integral web que facilita la gestión de certificados, documentos y materiales de estudio otorgados durante y después de la realización de cursos, diplomados o webinars en CENCA Comercio Exterior.",
+    galeri: "image.png",
+    liveUrl: "https://certicenca.cencacomex.com.mx/",
+    repoUrl: "https://github.com/yarul12GC/certicenca",
+    technologies: ["PHP", "MySQL", "Bootstrap"], // Tecnologías utilizadas
+  },
+];
 ---
 
-<Layout title="Portfolio | Pepe">
-  <Header logo="Pepe Portfolio" />
+<Layout title="Portfolio | Yahir Gallo">
+  <Header logo="Yahir Gallo Portfolio" />
   <Section
-    info="Ingeniero en Entornos Virtuales y Negocios Digitales, Desarrollador Web Front-end jr"
+    info="Ingeniero en Entornos Virtuales y Negocios Digitales, Desarrollador Web Full Stack jr"
   />
   <Info title="About Me " />
-  <h1 class="text-center text-yellow-400 text-4xl font-bold">My Skills</h1>
 
-  <Tecnologys tecnologia="Astro" />
+  <h1 class="text-center text-yellow-400 text-5xl font-extrabold mb-10">
+    My Skills
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 p-6">
+    {
+      tarjetas.map((card) => (
+        <div class="transition-transform transform hover:scale-105">
+          <Tecnologys tecnologia={card.name} imagen={card.src} />
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+    <h1 class="text-center text-yellow-400 text-4xl font-bold mb-10">
+      Mis Proyectos
+    </h1>
+
+    {
+      proyectosp.map((card1) => (
+        <Proyectos
+          nameproyect={card1.proyecto}
+          descriptionp={card1.description}
+          imagenp={card1.galeri}
+          repoUrl={card1.repoUrl}
+          liveUrl={card1.liveUrl}
+          technologies={card1.technologies}
+        />
+      ))
+    }
+  </div>
 </Layout>

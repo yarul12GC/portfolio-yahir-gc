@@ -1,46 +1,72 @@
 ---
+// Integrando el código en Astro con TypeScript
 interface Props {
   title?: string;
   logo: string;
 }
+
 const { title, logo } = Astro.props;
 
 const list = [
   { name: "About me", link: "#" },
-  { name: "Portfolio", link: "#" },
+  { name: "Portfolio", link: "#portafofiio" },
   { name: "Contact me", link: "#" },
 ];
 ---
 
-<nav class="bg-transparent flex justify-between text-white text-xl p-6">
+<nav
+  class="bg-transparent flex justify-between items-center text-white text-xl p-6"
+>
   <div>{logo}</div>
-  <div class="md:space-x-11">
+
+  {/* Botón hamburguesa para pantallas pequeñas */}
+  <div class="md:hidden">
+    <button id="menu-btn" class="block focus:outline-none">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+
+  {/* Menú que se oculta en pantallas pequeñas y se despliega en medianas */}
+  <div id="menu" class="hidden md:flex md:items-center md:space-x-11">
     {
-      list.map((list) => (
+      list.map((item) => (
         <a
-          href={list.link}
-          class="hover:text-yellow-400 hover:delay-150 hover:duration-100  cursor-pointer"
+          href={item.link}
+          class="hover:text-yellow-400 hover:delay-150 hover:duration-100 cursor-pointer"
         >
-          {list.name}{" "}
+          {item.name}
         </a>
       ))
     }
   </div>
-  <div class="md:space-x-5">
-    <a href="">
+
+  {/* Íconos de redes sociales, visibles en pantallas medianas y grandes */}
+  <div class="hidden md:flex md:space-x-5">
+    <a href="https://github.com/yarul12GC">
       <i
         class="fab fa-github hover:text-yellow-400 hover:delay-150 hover:duration-100"
       ></i>
     </a>
-    <a href="">
+    <a href="https://www.linkedin.com/in/yahir-gallo-colorado-1956b32bb/">
       <i
         class="fab fa-linkedin hover:text-yellow-400 hover:delay-150 hover:duration-100"
       ></i>
     </a>
-    <a href="">
+    <a href="https://www.linkedin.com/in/yahir-gallo-colorado-1956b32bb/">
       <i
         class="fab fa-whatsapp hover:text-yellow-400 hover:delay-150 hover:duration-100"
       ></i>
     </a>
   </div>
 </nav>
+
+<script type="ts">
+  const menuBtn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  menuBtn?.addEventListener("click", () => {
+    if (menu) {
+      menu.classList.toggle("hidden");
+    }
+  });
+</script>
