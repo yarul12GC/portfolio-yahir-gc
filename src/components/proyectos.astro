@@ -3,32 +3,35 @@ interface Props {
   nameproyect: string;
   descriptionp: string;
   imagenp: string;
-  repoUrl: string; // URL del repositorio
-  liveUrl: string; // URL de la página en vivo
-  technologies?: string[]; // Array de tecnologías, opcional
+  repoUrl: string;
+  liveUrl: string;
+  technologies?: string[];
 }
 
-const { nameproyect, descriptionp, imagenp, repoUrl, liveUrl, technologies } =
-  Astro.props;
+const {
+  nameproyect = "",
+  descriptionp = "",
+  imagenp = "",
+  repoUrl = "",
+  liveUrl = "",
+  technologies = []
+} = Astro.props as Partial<Props>;
 ---
 
 <section id="portafolio" class="bg-gray-900 py-10">
-  <div
-    class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4"
-  >
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
     <div class="md:w-1/2 mb-6 md:mb-0">
       <h1 class="text-4xl font-bold text-white text-center md:text-left">
         {nameproyect}
       </h1>
       <p class="mt-4 text-lg text-gray-300 text-left">{descriptionp}</p>
 
-      <!-- Sección de Tecnologías (se muestra solo si existen tecnologías) -->
       {technologies && technologies.length > 0 && (
         <div class="mt-4">
           <h4 class="text-yellow-400 font-bold">Tecnologías Utilizadas:</h4>
           <ul class="list-disc list-inside text-gray-300">
             {technologies.map((tech, index) => (
-              <li key={`tech-${index}`} class="mt-1">{tech}</li> 
+              <li class="mt-1">{tech}</li> 
             ))}
           </ul>
         </div>
@@ -42,7 +45,6 @@ const { nameproyect, descriptionp, imagenp, repoUrl, liveUrl, technologies } =
           class="text-gray-300 hover:text-yellow-400 mr-4"
         >
           <i class="fab fa-github fa-lg"></i>
-          <!-- Icono de GitHub -->
         </a>
         <a
           href={liveUrl}
@@ -55,12 +57,7 @@ const { nameproyect, descriptionp, imagenp, repoUrl, liveUrl, technologies } =
       </div>
     </div>
     <div class="md:w-1/2 flex justify-center">
-      <img
-        class="rounded-lg shadow-lg w-full h-auto max-w-md"
-        src={imagenp}
-        alt={nameproyect}
-      />
+      <img class="rounded-lg shadow-lg w-full h-auto max-w-md" src={imagenp} alt={nameproyect} />
     </div>
   </div>
 </section>
-
