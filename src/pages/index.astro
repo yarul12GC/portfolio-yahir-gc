@@ -35,13 +35,32 @@ const tarjetas = [
 
 const proyectosp = [
   {
+    proyecto: "SISTEMA DE PRACTICA PARA LA CAPTURA DE PEDIMENTOS",
+    description:
+      "Sistema de práctica para la capacitación en la captura de datos de pedimentos. Al finalizar, el sistema genera un archivo en formato PDF que incluye los códigos de barras y códigos QR correspondientes, creados con la información ingresada del pedimento.",
+    galeri: "pedimento.jpeg",
+    liveUrl: "https://certicenca.cencacomex.com.mx/pedimento-/",
+    repoUrl: "hhttps://github.com/yarul12GC/pedimento-",
+    technologies: ["PHP", "HTML", "CSS", "Bootstrap", "JavaScript", "MySQL"],
+  },
+  {
     proyecto: "CERTICENCA",
     description:
       "Sistema integral web que facilita la gestión de certificados, documentos y materiales de estudio otorgados durante y después de la realización de cursos, diplomados o webinars en CENCA Comercio Exterior.",
     galeri: "image.png",
     liveUrl: "https://certicenca.cencacomex.com.mx/",
     repoUrl: "https://github.com/yarul12GC/certicenca",
-    technologies: ["PHP", "MySQL", "Bootstrap"], // Tecnologías utilizadas
+    technologies: ["PHP", "MySQL", "Bootstrap", "CSS"],
+  },
+
+  {
+    proyecto: "BIBLIOTECA ADUANERA",
+    description:
+      "Sistema integral que compila la mayoría de las leyes, reglas y decretos de comercio exterior. Teniendo una interfaz intuitiva que facilita la navegación y consulta entre los artículos de cada ley, permitiendo al usuario acceder de manera rápida y eficiente.",
+    galeri: "bibliotecaadn.jpeg",
+    liveUrl: "https://leyes.vercel.app/panel",
+    repoUrl: "https://github.com/yarul12GC/leyes",
+    technologies: ["Angular", "HTML", "CSS", "Tailwind"],
   },
 ];
 ---
@@ -67,9 +86,9 @@ const proyectosp = [
     }
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-1 gap-8" id="potfolio">
     <h1 class="text-center text-yellow-400 text-4xl font-bold mb-10">
-      Mis Proyectos
+      MY PROJECTS
     </h1>
 
     {

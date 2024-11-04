@@ -5,7 +5,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<article class="lg:p-20 mt-10 lg:mt-0 p-5 bg-gray-800 rounded-lg shadow-lg">
+<article
+  class="lg:p-20 mt-10 lg:mt-0 p-5 bg-gray-800 rounded-lg shadow-lg"
+  id="aboutme"
+>
   <h1 class="text-yellow-400 text-5xl font-extrabold mb-8 text-center">
     {title}
   </h1>
@@ -16,19 +19,18 @@ const { title } = Astro.props;
       <h3
         class="text-slate-300 text-xl lg:text-2xl p-4 lg:p-0 lg:ml-4 text-justify leading-relaxed"
       >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-        tenetur dicta voluptates libero et sint tempore impedit assumenda!
-        Facilis labore dignissimos beatae at distinctio nemo in fugiat natus
-        adipisci accusantium. Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Blanditiis dolor,<span class="text-yellow-400">
-          quos doloribus suscipit, vitae laudantium, pariatur iste saepe
-        </span> ipsa natus inventore! Corrupti amet, adipisci repellendus officiis
-        illum aliquid repellat voluptates.
+        Soy Yahir Gallo colorado, <span class="text-yellow-400"
+          >desarollador web</span
+        > y profesional proactivo, resolutivo , trabajador, con habilidades de liderazgo
+        y empatía. Mi buen ánimo y eficacia me facilitan trabajar en equipo, donde
+        puedo liderar con buenos resultados. Con experiencia en el área de desarrollo
+        web, me destaco por mi capacidad para resolver problemas y mi compromiso
+        con el trabajo.
       </h3>
     </div>
     <div class="lg:w-1/4 flex justify-center">
       <img
-        class="rounded-full w-32 h-32 object-cover border-4 border-yellow-400 shadow-md"
+        class="rounded-full w-36 h-36 object-cover border-4 border-yellow-400 shadow-md"
         src="devfs.jpg"
         alt="Desarrollador"
       />
