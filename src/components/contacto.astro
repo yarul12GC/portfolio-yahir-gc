@@ -1,0 +1,25 @@
+---
+interface Props {
+  description: string;
+  iconocontact: string;
+}
+
+const { description, iconocontact } = Astro.props;
+---
+
+<div>
+  <div
+    class="max-w-xs mx-auto shadow-lg rounded-lg overflow-hidden bg-gray-800"
+  >
+    <div class="flex justify-center p-4">
+      <img
+        class="w-auto h-48 object-contain"
+        src={iconocontact}
+        alt={description}
+      />
+    </div>
+    <p class="text-center text-xl text-white font-semibold p-4">
+      {description}
+    </p>
+  </div>
+</div>

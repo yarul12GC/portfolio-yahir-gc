@@ -5,6 +5,7 @@ import Section from "../components/section.astro";
 import Info from "../components/info.astro";
 import Tecnologys from "../components/tecnologys.astro";
 import Proyectos from "../components/proyectos.astro";
+import Contacto from "../components/contacto.astro";
 
 const tarjetas = [
   {
@@ -20,7 +21,7 @@ const tarjetas = [
     src: "css.png",
   },
   {
-    name: "Javascript",
+    name: "JavaScript",
     src: "JS.png",
   },
   {
@@ -33,6 +34,20 @@ const tarjetas = [
   },
 ];
 
+const contactoport = [
+  {
+    contacto: "yahir634gallo@gmail.com",
+    img: "gmail.png",
+  },
+  {
+    contacto: "+52 72 92 87 00 76",
+    img: "telefono.png",
+  },
+  {
+    contacto: "Yahir Gallo colorado",
+    img: "linkedin.png",
+  },
+];
 const proyectosp = [
   {
     proyecto: "SISTEMA DE PRACTICA PARA LA CAPTURA DE PEDIMENTOS",
@@ -68,7 +83,7 @@ const proyectosp = [
 <Layout title="Portfolio | Yahir Gallo">
   <Header logo="Yahir Gallo Portfolio" />
   <Section
-    info="Ingeniero en Entornos Virtuales y Negocios Digitales, Desarrollador Web Full Stack jr"
+    info="Ingeniero en Entornos Virtuales y Negocios Digitales, Desarrollador Web jr."
   />
   <Info title="About Me " />
 
@@ -101,6 +116,21 @@ const proyectosp = [
           liveUrl={card1.liveUrl}
           technologies={card1.technologies}
         />
+      ))
+    }
+  </div>
+
+  <h1
+    class="text-center text-yellow-400 text-4xl font-bold mb-10"
+    id="contactoportafolio"
+  >
+    Contact me
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 p-6">
+    {
+      contactoport.map((card) => (
+        <Contacto description={card.contacto} iconocontact={card.img} />
       ))
     }
   </div>
